@@ -1,0 +1,408 @@
+	<form action="/" method="POST">
+		<% 
+		var first_name = first_name ? first_name : ""
+		var last_name = last_name ? last_name : ""
+		var address = address ? address : ""
+		var city = city ? city : ""
+		var state = state ? state : ""
+		var zip = zip ? zip : ""
+		var country = country ? country : ""
+		var email = email ? email : ""
+		var phone = phone ? phone : ""
+
+		 %>
+		<div class="form-group">
+			<label for="first_name">First Name:</label>
+			<input class="form-control" placeholder="First Name" id="first_name" name="first_name" pattern=".{3,}" type="text" required value="<%= first_name %>"></input>
+		</div>
+
+		<div class="form-group">
+			<label for="last_name">Last Name:</label>
+			<input class="form-control" placeholder="Last Name" id="last_name" name="last_name" pattern=".{3,}" type="text" required value="<%= last_name %>"></input>
+		</div>
+		<div class="form-group">
+			<label for="address">Address:</label>
+			<input class="form-control" id="address" placeholder="Address" name="address" type="text" value="<%= address %>"></input>
+			<label for="city">City:</label>
+			<input class="form-control" id="city" placeholder="City" name="city" type="text" value="<%= city %>"></input>
+		</div>
+			<div class="form-group">
+				<label for="state">State:</label><br>
+				<select class="state form-control" id="state" name="state]" > 
+					<option value="" class="form-control" disabled selected>State/Province</option>
+					<optgroup label="United States">
+						<option <%= state == "AL" ? "selected" : "" %> value="AL">Alabama</option> 
+						<option <%= state == "AK" ? "selected" : "" %> value="AK">Alaska</option> 
+						<option <%= state == "AZ" ? "selected" : "" %> value="AZ">Arizona</option> 
+						<option <%= state == "AR" ? "selected" : "" %> value="AR">Arkansas</option> 
+						<option <%= state == "CA" ? "selected" : "" %> value="CA">California</option> 
+						<option <%= state == "CO" ? "selected" : "" %> value="CO">Colorado</option> 
+						<option <%= state == "CT" ? "selected" : "" %> value="CT">Connecticut</option> 
+						<option <%= state == "DE" ? "selected" : "" %> value="DE">Delaware</option> 
+						<option <%= state == "DC" ? "selected" : "" %> value="DC">District Of Columbia</option> 
+						<option <%= state == "FL" ? "selected" : "" %> value="FL">Florida</option> 
+						<option <%= state == "GA" ? "selected" : "" %> value="GA">Georgia</option> 
+						<option <%= state == "HI" ? "selected" : "" %> value="HI">Hawaii</option> 
+						<option <%= state == "ID" ? "selected" : "" %> value="ID">Idaho</option> 
+						<option <%= state == "IL" ? "selected" : "" %> value="IL">Illinois</option> 
+						<option <%= state == "IN" ? "selected" : "" %> value="IN">Indiana</option> 
+						<option <%= state == "IA" ? "selected" : "" %> value="IA">Iowa</option> 
+						<option <%= state == "KS" ? "selected" : "" %> value="KS">Kansas</option> 
+						<option <%= state == "KY" ? "selected" : "" %> value="KY">Kentucky</option> 
+						<option <%= state == "LA" ? "selected" : "" %> value="LA">Louisiana</option> 
+						<option <%= state == "ME" ? "selected" : "" %> value="ME">Maine</option> 
+						<option <%= state == "MD" ? "selected" : "" %> value="MD">Maryland</option> 
+						<option <%= state == "MA" ? "selected" : "" %> value="MA">Massachusetts</option> 
+						<option <%= state == "MI" ? "selected" : "" %> value="MI">Michigan</option> 
+						<option <%= state == "MN" ? "selected" : "" %> value="MN">Minnesota</option> 
+						<option <%= state == "MS" ? "selected" : "" %> value="MS">Mississippi</option> 
+						<option <%= state == "MO" ? "selected" : "" %> value="MO">Missouri</option> 
+						<option <%= state == "MT" ? "selected" : "" %> value="MT">Montana</option> 
+						<option <%= state == "NE" ? "selected" : "" %> value="NE">Nebraska</option> 
+						<option <%= state == "NV" ? "selected" : "" %> value="NV">Nevada</option> 
+						<option <%= state == "NH" ? "selected" : "" %> value="NH">New Hampshire</option> 
+						<option <%= state == "NJ" ? "selected" : "" %> value="NJ">New Jersey</option> 
+						<option <%= state == "NM" ? "selected" : "" %> value="NM">New Mexico</option> 
+						<option <%= state == "NY" ? "selected" : "" %> value="NY">New York</option> 
+						<option <%= state == "NC" ? "selected" : "" %> value="NC">North Carolina</option> 
+						<option <%= state == "ND" ? "selected" : "" %> value="ND">North Dakota</option> 
+						<option <%= state == "OH" ? "selected" : "" %> value="OH">Ohio</option> 
+						<option <%= state == "OK" ? "selected" : "" %> value="OK">Oklahoma</option> 
+						<option <%= state == "OR" ? "selected" : "" %> value="OR">Oregon</option> 
+						<option <%= state == "PA" ? "selected" : "" %> value="PA">Pennsylvania</option> 
+						<option <%= state == "RI" ? "selected" : "" %> value="RI">Rhode Island</option> 
+						<option <%= state == "SC" ? "selected" : "" %> value="SC">South Carolina</option> 
+						<option <%= state == "SD" ? "selected" : "" %> value="SD">South Dakota</option> 
+						<option <%= state == "TN" ? "selected" : "" %> value="TN">Tennessee</option> 
+						<option <%= state == "TX" ? "selected" : "" %> value="TX">Texas</option> 
+						<option <%= state == "UT" ? "selected" : "" %> value="UT">Utah</option> 
+						<option <%= state == "VT" ? "selected" : "" %> value="VT">Vermont</option> 
+						<option <%= state == "VA" ? "selected" : "" %> value="VA">Virginia</option> 
+						<option <%= state == "WA" ? "selected" : "" %> value="WA">Washington</option> 
+						<option <%= state == "WV" ? "selected" : "" %> value="WV">West Virginia</option> 
+						<option <%= state == "WI" ? "selected" : "" %> value="WI">Wisconsin</option> 
+						<option <%= state == "WY" ? "selected" : "" %> value="WY">Wyoming</option>
+					</optgroup>
+					<optgroup label="Canada">
+						<option <%= state == "AB" ? "selected" : "" %> value="AB">Alberta</option>
+						<option <%= state == "BC" ? "selected" : "" %> value="BC">British Columbia</option>
+						<option <%= state == "MB" ? "selected" : "" %> value="MB">Manitoba</option>
+						<option <%= state == "NB" ? "selected" : "" %> value="NB">New Brunswick</option>
+						<option <%= state == "NL" ? "selected" : "" %> value="NL">Newfoundland and Labrador</option>
+						<option <%= state == "NS" ? "selected" : "" %> value="NS">Nova Scotia</option>
+						<option <%= state == "ON" ? "selected" : "" %> value="ON">Ontario</option>
+						<option <%= state == "PE" ? "selected" : "" %> value="PE">Prince Edward Island</option>
+						<option <%= state == "QC" ? "selected" : "" %> value="QC">Quebec</option>
+						<option <%= state == "SK" ? "selected" : "" %> value="SK">Saskatchewan</option>
+						<option <%= state == "NT" ? "selected" : "" %> value="NT">Northwest Territories</option>
+						<option <%= state == "NU" ? "selected" : "" %> value="NU">Nunavut</option>
+						<option <%= state == "YT" ? "selected" : "" %> value="YT">Yukon</option>
+					</optgroup>
+					<optgroup label="Mexico">
+						<option <%= state == "Aguascalientes" ? "selected" : "" %> value="Aguascalientes">Aguascalientes</option>
+						<option <%= state == "Baja California" ? "selected" : "" %> value="Baja California">Baja California</option>
+						<option <%= state == "Baja California Sur" ? "selected" : "" %> value="Baja California Sur">Baja California Sur</option>
+						<option <%= state == "Campeche" ? "selected" : "" %> value="Campeche">Campeche</option>
+						<option <%= state == "Chiapas" ? "selected" : "" %> value="Chiapas">Chiapas</option>
+						<option <%= state == "Chihuahua" ? "selected" : "" %> value="Chihuahua">Chihuahua</option>
+						<option <%= state == "Coahuila" ? "selected" : "" %> value="Coahuila">Coahuila</option>
+						<option <%= state == "Colima" ? "selected" : "" %> value="Colima">Colima</option>
+						<option <%= state == "Distrito Federal" ? "selected" : "" %> value="Distrito Federal">Distrito Federal</option>
+						<option <%= state == "Durango" ? "selected" : "" %> value="Durango">Durango</option>
+						<option <%= state == "Estado de México" ? "selected" : "" %> value="Estado de México">Estado de México</option>
+						<option <%= state == "Guanajuato" ? "selected" : "" %> value="Guanajuato">Guanajuato</option>
+						<option <%= state == "Guerrero" ? "selected" : "" %> value="Guerrero">Guerrero</option>
+						<option <%= state == "Hidalgo" ? "selected" : "" %> value="Hidalgo">Hidalgo</option>
+						<option <%= state == "Jalisco" ? "selected" : "" %> value="Jalisco">Jalisco</option>
+						<option <%= state == "Michoacán" ? "selected" : "" %> value="Michoacán">Michoacán</option>
+						<option <%= state == "Morelos" ? "selected" : "" %> value="Morelos">Morelos</option>
+						<option <%= state == "Nayarit" ? "selected" : "" %> value="Nayarit">Nayarit</option>
+						<option <%= state == "Nuevo León" ? "selected" : "" %> value="Nuevo León">Nuevo León</option>
+						<option <%= state == "Oaxaca" ? "selected" : "" %> value="Oaxaca">Oaxaca</option>
+						<option <%= state == "Puebla" ? "selected" : "" %> value="Puebla">Puebla</option>
+						<option <%= state == "Querétaro" ? "selected" : "" %> value="Querétaro">Querétaro</option>
+						<option <%= state == "Quintana Roo" ? "selected" : "" %> value="Quintana Roo">Quintana Roo</option>
+						<option <%= state == "San Luis Potosí" ? "selected" : "" %> value="San Luis Potosí">San Luis Potosí</option>
+						<option <%= state == "Sinaloa" ? "selected" : "" %> value="Sinaloa">Sinaloa</option>
+						<option <%= state == "Sonora" ? "selected" : "" %> value="Sonora">Sonora</option>
+						<option <%= state == "Tabasco" ? "selected" : "" %> value="Tabasco">Tabasco</option>
+						<option <%= state == "Tamaulipas" ? "selected" : "" %> value="Tamaulipas">Tamaulipas</option>
+						<option <%= state == "Tlaxcala" ? "selected" : "" %> value="Tlaxcala">Tlaxcala</option>
+						<option <%= state == "Veracruz" ? "selected" : "" %> value="Veracruz">Veracruz</option>
+						<option <%= state == "Yucatán" ? "selected" : "" %> value="Yucatán">Yucatán</option>
+						<option <%= state == "Zacatecas" ? "selected" : "" %> value="Zacatecas">Zacatecas</option>
+					</optgroup>
+				</select>
+			</div>
+		<div class="form-group">
+			<label for="zip">zip:</label>
+			<input class="form-control" id="zip" placeholder="ZIP" id="zip" name="zip" value="<%= zip %>">
+		</div>
+		<div class="form-group">
+			<label for="country">Country</label>
+			<select class="country form-control" id="country" name="country">
+				<option <%= country == "AFG" ? "selected" : "" %> value="AFG">Afghanistan</option>
+				<option <%= country == "ALA" ? "selected" : "" %> value="ALA">Åland Islands</option>
+				<option <%= country == "ALB" ? "selected" : "" %> value="ALB">Albania</option>
+				<option <%= country == "DZA" ? "selected" : "" %> value="DZA">Algeria</option>
+				<option <%= country == "ASM" ? "selected" : "" %> value="ASM">American Samoa</option>
+				<option <%= country == "AND" ? "selected" : "" %> value="AND">Andorra</option>
+				<option <%= country == "AGO" ? "selected" : "" %> value="AGO">Angola</option>
+				<option <%= country == "AIA" ? "selected" : "" %> value="AIA">Anguilla</option>
+				<option <%= country == "ATA" ? "selected" : "" %> value="ATA">Antarctica</option>
+				<option <%= country == "ATG" ? "selected" : "" %> value="ATG">Antigua and Barbuda</option>
+				<option <%= country == "ARG" ? "selected" : "" %> value="ARG">Argentina</option>
+				<option <%= country == "ARM" ? "selected" : "" %> value="ARM">Armenia</option>
+				<option <%= country == "ABW" ? "selected" : "" %> value="ABW">Aruba</option>
+				<option <%= country == "AUS" ? "selected" : "" %> value="AUS">Australia</option>
+				<option <%= country == "AUT" ? "selected" : "" %> value="AUT">Austria</option>
+				<option <%= country == "AZE" ? "selected" : "" %> value="AZE">Azerbaijan</option>
+				<option <%= country == "BHS" ? "selected" : "" %> value="BHS">Bahamas</option>
+				<option <%= country == "BHR" ? "selected" : "" %> value="BHR">Bahrain</option>
+				<option <%= country == "BGD" ? "selected" : "" %> value="BGD">Bangladesh</option>
+				<option <%= country == "BRB" ? "selected" : "" %> value="BRB">Barbados</option>
+				<option <%= country == "BLR" ? "selected" : "" %> value="BLR">Belarus</option>
+				<option <%= country == "BEL" ? "selected" : "" %> value="BEL">Belgium</option>
+				<option <%= country == "BLZ" ? "selected" : "" %> value="BLZ">Belize</option>
+				<option <%= country == "BEN" ? "selected" : "" %> value="BEN">Benin</option>
+				<option <%= country == "BMU" ? "selected" : "" %> value="BMU">Bermuda</option>
+				<option <%= country == "BTN" ? "selected" : "" %> value="BTN">Bhutan</option>
+				<option <%= country == "BOL" ? "selected" : "" %> value="BOL">Bolivia, Plurinational State of</option>
+				<option <%= country == "BES" ? "selected" : "" %> value="BES">Bonaire, Sint Eustatius and Saba</option>
+				<option <%= country == "BIH" ? "selected" : "" %> value="BIH">Bosnia and Herzegovina</option>
+				<option <%= country == "BWA" ? "selected" : "" %> value="BWA">Botswana</option>
+				<option <%= country == "BVT" ? "selected" : "" %> value="BVT">Bouvet Island</option>
+				<option <%= country == "BRA" ? "selected" : "" %> value="BRA">Brazil</option>
+				<option <%= country == "IOT" ? "selected" : "" %> value="IOT">British Indian Ocean Territory</option>
+				<option <%= country == "BRN" ? "selected" : "" %> value="BRN">Brunei Darussalam</option>
+				<option <%= country == "BGR" ? "selected" : "" %> value="BGR">Bulgaria</option>
+				<option <%= country == "BFA" ? "selected" : "" %> value="BFA">Burkina Faso</option>
+				<option <%= country == "BDI" ? "selected" : "" %> value="BDI">Burundi</option>
+				<option <%= country == "KHM" ? "selected" : "" %> value="KHM">Cambodia</option>
+				<option <%= country == "CMR" ? "selected" : "" %> value="CMR">Cameroon</option>
+				<option <%= country == "CAN" ? "selected" : "" %> value="CAN">Canada</option>
+				<option <%= country == "CPV" ? "selected" : "" %> value="CPV">Cape Verde</option>
+				<option <%= country == "CYM" ? "selected" : "" %> value="CYM">Cayman Islands</option>
+				<option <%= country == "CAF" ? "selected" : "" %> value="CAF">Central African Republic</option>
+				<option <%= country == "TCD" ? "selected" : "" %> value="TCD">Chad</option>
+				<option <%= country == "CHL" ? "selected" : "" %> value="CHL">Chile</option>
+				<option <%= country == "CHN" ? "selected" : "" %> value="CHN">China</option>
+				<option <%= country == "CXR" ? "selected" : "" %> value="CXR">Christmas Island</option>
+				<option <%= country == "CCK" ? "selected" : "" %> value="CCK">Cocos (Keeling) Islands</option>
+				<option <%= country == "COL" ? "selected" : "" %> value="COL">Colombia</option>
+				<option <%= country == "COM" ? "selected" : "" %> value="COM">Comoros</option>
+				<option <%= country == "COG" ? "selected" : "" %> value="COG">Congo</option>
+				<option <%= country == "COD" ? "selected" : "" %> value="COD">Congo, the Democratic Republic of the</option>
+				<option <%= country == "COK" ? "selected" : "" %> value="COK">Cook Islands</option>
+				<option <%= country == "CRI" ? "selected" : "" %> value="CRI">Costa Rica</option>
+				<option <%= country == "CIV" ? "selected" : "" %> value="CIV">Côte d'Ivoire</option>
+				<option <%= country == "HRV" ? "selected" : "" %> value="HRV">Croatia</option>
+				<option <%= country == "CUB" ? "selected" : "" %> value="CUB">Cuba</option>
+				<option <%= country == "CUW" ? "selected" : "" %> value="CUW">Curaçao</option>
+				<option <%= country == "CYP" ? "selected" : "" %> value="CYP">Cyprus</option>
+				<option <%= country == "CZE" ? "selected" : "" %> value="CZE">Czech Republic</option>
+				<option <%= country == "DNK" ? "selected" : "" %> value="DNK">Denmark</option>
+				<option <%= country == "DJI" ? "selected" : "" %> value="DJI">Djibouti</option>
+				<option <%= country == "DMA" ? "selected" : "" %> value="DMA">Dominica</option>
+				<option <%= country == "DOM" ? "selected" : "" %> value="DOM">Dominican Republic</option>
+				<option <%= country == "ECU" ? "selected" : "" %> value="ECU">Ecuador</option>
+				<option <%= country == "EGY" ? "selected" : "" %> value="EGY">Egypt</option>
+				<option <%= country == "SLV" ? "selected" : "" %> value="SLV">El Salvador</option>
+				<option <%= country == "GNQ" ? "selected" : "" %> value="GNQ">Equatorial Guinea</option>
+				<option <%= country == "ERI" ? "selected" : "" %> value="ERI">Eritrea</option>
+				<option <%= country == "EST" ? "selected" : "" %> value="EST">Estonia</option>
+				<option <%= country == "ETH" ? "selected" : "" %> value="ETH">Ethiopia</option>
+				<option <%= country == "FLK" ? "selected" : "" %> value="FLK">Falkland Islands (Malvinas)</option>
+				<option <%= country == "FRO" ? "selected" : "" %> value="FRO">Faroe Islands</option>
+				<option <%= country == "FJI" ? "selected" : "" %> value="FJI">Fiji</option>
+				<option <%= country == "FIN" ? "selected" : "" %> value="FIN">Finland</option>
+				<option <%= country == "FRA" ? "selected" : "" %> value="FRA">France</option>
+				<option <%= country == "GUF" ? "selected" : "" %> value="GUF">French Guiana</option>
+				<option <%= country == "PYF" ? "selected" : "" %> value="PYF">French Polynesia</option>
+				<option <%= country == "ATF" ? "selected" : "" %> value="ATF">French Southern Territories</option>
+				<option <%= country == "GAB" ? "selected" : "" %> value="GAB">Gabon</option>
+				<option <%= country == "GMB" ? "selected" : "" %> value="GMB">Gambia</option>
+				<option <%= country == "GEO" ? "selected" : "" %> value="GEO">Georgia</option>
+				<option <%= country == "DEU" ? "selected" : "" %> value="DEU">Germany</option>
+				<option <%= country == "GHA" ? "selected" : "" %> value="GHA">Ghana</option>
+				<option <%= country == "GIB" ? "selected" : "" %> value="GIB">Gibraltar</option>
+				<option <%= country == "GRC" ? "selected" : "" %> value="GRC">Greece</option>
+				<option <%= country == "GRL" ? "selected" : "" %> value="GRL">Greenland</option>
+				<option <%= country == "GRD" ? "selected" : "" %> value="GRD">Grenada</option>
+				<option <%= country == "GLP" ? "selected" : "" %> value="GLP">Guadeloupe</option>
+				<option <%= country == "GUM" ? "selected" : "" %> value="GUM">Guam</option>
+				<option <%= country == "GTM" ? "selected" : "" %> value="GTM">Guatemala</option>
+				<option <%= country == "GGY" ? "selected" : "" %> value="GGY">Guernsey</option>
+				<option <%= country == "GIN" ? "selected" : "" %> value="GIN">Guinea</option>
+				<option <%= country == "GNB" ? "selected" : "" %> value="GNB">Guinea-Bissau</option>
+				<option <%= country == "GUY" ? "selected" : "" %> value="GUY">Guyana</option>
+				<option <%= country == "HTI" ? "selected" : "" %> value="HTI">Haiti</option>
+				<option <%= country == "HMD" ? "selected" : "" %> value="HMD">Heard Island and McDonald Islands</option>
+				<option <%= country == "VAT" ? "selected" : "" %> value="VAT">Holy See (Vatican City State)</option>
+				<option <%= country == "HND" ? "selected" : "" %> value="HND">Honduras</option>
+				<option <%= country == "HKG" ? "selected" : "" %> value="HKG">Hong Kong</option>
+				<option <%= country == "HUN" ? "selected" : "" %> value="HUN">Hungary</option>
+				<option <%= country == "ISL" ? "selected" : "" %> value="ISL">Iceland</option>
+				<option <%= country == "IND" ? "selected" : "" %> value="IND">India</option>
+				<option <%= country == "IDN" ? "selected" : "" %> value="IDN">Indonesia</option>
+				<option <%= country == "IRN" ? "selected" : "" %> value="IRN">Iran, Islamic Republic of</option>
+				<option <%= country == "IRQ" ? "selected" : "" %> value="IRQ">Iraq</option>
+				<option <%= country == "IRL" ? "selected" : "" %> value="IRL">Ireland</option>
+				<option <%= country == "IMN" ? "selected" : "" %> value="IMN">Isle of Man</option>
+				<option <%= country == "ISR" ? "selected" : "" %> value="ISR">Israel</option>
+				<option <%= country == "ITA" ? "selected" : "" %> value="ITA">Italy</option>
+				<option <%= country == "JAM" ? "selected" : "" %> value="JAM">Jamaica</option>
+				<option <%= country == "JPN" ? "selected" : "" %> value="JPN">Japan</option>
+				<option <%= country == "JEY" ? "selected" : "" %> value="JEY">Jersey</option>
+				<option <%= country == "JOR" ? "selected" : "" %> value="JOR">Jordan</option>
+				<option <%= country == "KAZ" ? "selected" : "" %> value="KAZ">Kazakhstan</option>
+				<option <%= country == "KEN" ? "selected" : "" %> value="KEN">Kenya</option>
+				<option <%= country == "KIR" ? "selected" : "" %> value="KIR">Kiribati</option>
+				<option <%= country == "PRK" ? "selected" : "" %> value="PRK">Korea, Democratic People's Republic of</option>
+				<option <%= country == "KOR" ? "selected" : "" %> value="KOR">Korea, Republic of</option>
+				<option <%= country == "KWT" ? "selected" : "" %> value="KWT">Kuwait</option>
+				<option <%= country == "KGZ" ? "selected" : "" %> value="KGZ">Kyrgyzstan</option>
+				<option <%= country == "LAO" ? "selected" : "" %> value="LAO">Lao People's Democratic Republic</option>
+				<option <%= country == "LVA" ? "selected" : "" %> value="LVA">Latvia</option>
+				<option <%= country == "LBN" ? "selected" : "" %> value="LBN">Lebanon</option>
+				<option <%= country == "LSO" ? "selected" : "" %> value="LSO">Lesotho</option>
+				<option <%= country == "LBR" ? "selected" : "" %> value="LBR">Liberia</option>
+				<option <%= country == "LBY" ? "selected" : "" %> value="LBY">Libya</option>
+				<option <%= country == "LIE" ? "selected" : "" %> value="LIE">Liechtenstein</option>
+				<option <%= country == "LTU" ? "selected" : "" %> value="LTU">Lithuania</option>
+				<option <%= country == "LUX" ? "selected" : "" %> value="LUX">Luxembourg</option>
+				<option <%= country == "MAC" ? "selected" : "" %> value="MAC">Macao</option>
+				<option <%= country == "MKD" ? "selected" : "" %> value="MKD">Macedonia, the former Yugoslav Republic of</option>
+				<option <%= country == "MDG" ? "selected" : "" %> value="MDG">Madagascar</option>
+				<option <%= country == "MWI" ? "selected" : "" %> value="MWI">Malawi</option>
+				<option <%= country == "MYS" ? "selected" : "" %> value="MYS">Malaysia</option>
+				<option <%= country == "MDV" ? "selected" : "" %> value="MDV">Maldives</option>
+				<option <%= country == "MLI" ? "selected" : "" %> value="MLI">Mali</option>
+				<option <%= country == "MLT" ? "selected" : "" %> value="MLT">Malta</option>
+				<option <%= country == "MHL" ? "selected" : "" %> value="MHL">Marshall Islands</option>
+				<option <%= country == "MTQ" ? "selected" : "" %> value="MTQ">Martinique</option>
+				<option <%= country == "MRT" ? "selected" : "" %> value="MRT">Mauritania</option>
+				<option <%= country == "MUS" ? "selected" : "" %> value="MUS">Mauritius</option>
+				<option <%= country == "MYT" ? "selected" : "" %> value="MYT">Mayotte</option>
+				<option <%= country == "MEX" ? "selected" : "" %> value="MEX">Mexico</option>
+				<option <%= country == "FSM" ? "selected" : "" %> value="FSM">Micronesia, Federated States of</option>
+				<option <%= country == "MDA" ? "selected" : "" %> value="MDA">Moldova, Republic of</option>
+				<option <%= country == "MCO" ? "selected" : "" %> value="MCO">Monaco</option>
+				<option <%= country == "MNG" ? "selected" : "" %> value="MNG">Mongolia</option>
+				<option <%= country == "MNE" ? "selected" : "" %> value="MNE">Montenegro</option>
+				<option <%= country == "MSR" ? "selected" : "" %> value="MSR">Montserrat</option>
+				<option <%= country == "MAR" ? "selected" : "" %> value="MAR">Morocco</option>
+				<option <%= country == "MOZ" ? "selected" : "" %> value="MOZ">Mozambique</option>
+				<option <%= country == "MMR" ? "selected" : "" %> value="MMR">Myanmar</option>
+				<option <%= country == "NAM" ? "selected" : "" %> value="NAM">Namibia</option>
+				<option <%= country == "NRU" ? "selected" : "" %> value="NRU">Nauru</option>
+				<option <%= country == "NPL" ? "selected" : "" %> value="NPL">Nepal</option>
+				<option <%= country == "NLD" ? "selected" : "" %> value="NLD">Netherlands</option>
+				<option <%= country == "NCL" ? "selected" : "" %> value="NCL">New Caledonia</option>
+				<option <%= country == "NZL" ? "selected" : "" %> value="NZL">New Zealand</option>
+				<option <%= country == "NIC" ? "selected" : "" %> value="NIC">Nicaragua</option>
+				<option <%= country == "NER" ? "selected" : "" %> value="NER">Niger</option>
+				<option <%= country == "NGA" ? "selected" : "" %> value="NGA">Nigeria</option>
+				<option <%= country == "NIU" ? "selected" : "" %> value="NIU">Niue</option>
+				<option <%= country == "NFK" ? "selected" : "" %> value="NFK">Norfolk Island</option>
+				<option <%= country == "MNP" ? "selected" : "" %> value="MNP">Northern Mariana Islands</option>
+				<option <%= country == "NOR" ? "selected" : "" %> value="NOR">Norway</option>
+				<option <%= country == "OMN" ? "selected" : "" %> value="OMN">Oman</option>
+				<option <%= country == "PAK" ? "selected" : "" %> value="PAK">Pakistan</option>
+				<option <%= country == "PLW" ? "selected" : "" %> value="PLW">Palau</option>
+				<option <%= country == "PSE" ? "selected" : "" %> value="PSE">Palestinian Territory, Occupied</option>
+				<option <%= country == "PAN" ? "selected" : "" %> value="PAN">Panama</option>
+				<option <%= country == "PNG" ? "selected" : "" %> value="PNG">Papua New Guinea</option>
+				<option <%= country == "PRY" ? "selected" : "" %> value="PRY">Paraguay</option>
+				<option <%= country == "PER" ? "selected" : "" %> value="PER">Peru</option>
+				<option <%= country == "PHL" ? "selected" : "" %> value="PHL">Philippines</option>
+				<option <%= country == "PCN" ? "selected" : "" %> value="PCN">Pitcairn</option>
+				<option <%= country == "POL" ? "selected" : "" %> value="POL">Poland</option>
+				<option <%= country == "PRT" ? "selected" : "" %> value="PRT">Portugal</option>
+				<option <%= country == "PRI" ? "selected" : "" %> value="PRI">Puerto Rico</option>
+				<option <%= country == "QAT" ? "selected" : "" %> value="QAT">Qatar</option>
+				<option <%= country == "REU" ? "selected" : "" %> value="REU">Réunion</option>
+				<option <%= country == "ROU" ? "selected" : "" %> value="ROU">Romania</option>
+				<option <%= country == "RUS" ? "selected" : "" %> value="RUS">Russian Federation</option>
+				<option <%= country == "RWA" ? "selected" : "" %> value="RWA">Rwanda</option>
+				<option <%= country == "BLM" ? "selected" : "" %> value="BLM">Saint Barthélemy</option>
+				<option <%= country == "SHN" ? "selected" : "" %> value="SHN">Saint Helena, Ascension and Tristan da Cunha</option>
+				<option <%= country == "KNA" ? "selected" : "" %> value="KNA">Saint Kitts and Nevis</option>
+				<option <%= country == "LCA" ? "selected" : "" %> value="LCA">Saint Lucia</option>
+				<option <%= country == "MAF" ? "selected" : "" %> value="MAF">Saint Martin (French part)</option>
+				<option <%= country == "SPM" ? "selected" : "" %> value="SPM">Saint Pierre and Miquelon</option>
+				<option <%= country == "VCT" ? "selected" : "" %> value="VCT">Saint Vincent and the Grenadines</option>
+				<option <%= country == "WSM" ? "selected" : "" %> value="WSM">Samoa</option>
+				<option <%= country == "SMR" ? "selected" : "" %> value="SMR">San Marino</option>
+				<option <%= country == "STP" ? "selected" : "" %> value="STP">Sao Tome and Principe</option>
+				<option <%= country == "SAU" ? "selected" : "" %> value="SAU">Saudi Arabia</option>
+				<option <%= country == "SEN" ? "selected" : "" %> value="SEN">Senegal</option>
+				<option <%= country == "SRB" ? "selected" : "" %> value="SRB">Serbia</option>
+				<option <%= country == "SYC" ? "selected" : "" %> value="SYC">Seychelles</option>
+				<option <%= country == "SLE" ? "selected" : "" %> value="SLE">Sierra Leone</option>
+				<option <%= country == "SGP" ? "selected" : "" %> value="SGP">Singapore</option>
+				<option <%= country == "SXM" ? "selected" : "" %> value="SXM">Sint Maarten (Dutch part)</option>
+				<option <%= country == "SVK" ? "selected" : "" %> value="SVK">Slovakia</option>
+				<option <%= country == "SVN" ? "selected" : "" %> value="SVN">Slovenia</option>
+				<option <%= country == "SLB" ? "selected" : "" %> value="SLB">Solomon Islands</option>
+				<option <%= country == "SOM" ? "selected" : "" %> value="SOM">Somalia</option>
+				<option <%= country == "ZAF" ? "selected" : "" %> value="ZAF">South Africa</option>
+				<option <%= country == "SGS" ? "selected" : "" %> value="SGS">South Georgia and the South Sandwich Islands</option>
+				<option <%= country == "SSD" ? "selected" : "" %> value="SSD">South Sudan</option>
+				<option <%= country == "ESP" ? "selected" : "" %> value="ESP">Spain</option>
+				<option <%= country == "LKA" ? "selected" : "" %> value="LKA">Sri Lanka</option>
+				<option <%= country == "SDN" ? "selected" : "" %> value="SDN">Sudan</option>
+				<option <%= country == "SUR" ? "selected" : "" %> value="SUR">Suriname</option>
+				<option <%= country == "SJM" ? "selected" : "" %> value="SJM">Svalbard and Jan Mayen</option>
+				<option <%= country == "SWZ" ? "selected" : "" %> value="SWZ">Swaziland</option>
+				<option <%= country == "SWE" ? "selected" : "" %> value="SWE">Sweden</option>
+				<option <%= country == "CHE" ? "selected" : "" %> value="CHE">Switzerland</option>
+				<option <%= country == "SYR" ? "selected" : "" %> value="SYR">Syrian Arab Republic</option>
+				<option <%= country == "TWN" ? "selected" : "" %> value="TWN">Taiwan, Province of China</option>
+				<option <%= country == "TJK" ? "selected" : "" %> value="TJK">Tajikistan</option>
+				<option <%= country == "TZA" ? "selected" : "" %> value="TZA">Tanzania, United Republic of</option>
+				<option <%= country == "THA" ? "selected" : "" %> value="THA">Thailand</option>
+				<option <%= country == "TLS" ? "selected" : "" %> value="TLS">Timor-Leste</option>
+				<option <%= country == "TGO" ? "selected" : "" %> value="TGO">Togo</option>
+				<option <%= country == "TKL" ? "selected" : "" %> value="TKL">Tokelau</option>
+				<option <%= country == "TON" ? "selected" : "" %> value="TON">Tonga</option>
+				<option <%= country == "TTO" ? "selected" : "" %> value="TTO">Trinidad and Tobago</option>
+				<option <%= country == "TUN" ? "selected" : "" %> value="TUN">Tunisia</option>
+				<option <%= country == "TUR" ? "selected" : "" %> value="TUR">Turkey</option>
+				<option <%= country == "TKM" ? "selected" : "" %> value="TKM">Turkmenistan</option>
+				<option <%= country == "TCA" ? "selected" : "" %> value="TCA">Turks and Caicos Islands</option>
+				<option <%= country == "TUV" ? "selected" : "" %> value="TUV">Tuvalu</option>
+				<option <%= country == "UGA" ? "selected" : "" %> value="UGA">Uganda</option>
+				<option <%= country == "UKR" ? "selected" : "" %> value="UKR">Ukraine</option>
+				<option <%= country == "ARE" ? "selected" : "" %> value="ARE">United Arab Emirates</option>
+				<option <%= country == "GBR" ? "selected" : "" %> value="GBR">United Kingdom</option>
+				<option <%= country == "USA" ? "selected" : "" %> value="USA">United States</option>
+				<option <%= country == "UMI" ? "selected" : "" %> value="UMI">United States Minor Outlying Islands</option>
+				<option <%= country == "URY" ? "selected" : "" %> value="URY">Uruguay</option>
+				<option <%= country == "UZB" ? "selected" : "" %> value="UZB">Uzbekistan</option>
+				<option <%= country == "VUT" ? "selected" : "" %> value="VUT">Vanuatu</option>
+				<option <%= country == "VEN" ? "selected" : "" %> value="VEN">Venezuela, Bolivarian Republic of</option>
+				<option <%= country == "VNM" ? "selected" : "" %> value="VNM">Viet Nam</option>
+				<option <%= country == "VGB" ? "selected" : "" %> value="VGB">Virgin Islands, British</option>
+				<option <%= country == "VIR" ? "selected" : "" %> value="VIR">Virgin Islands, U.S.</option>
+				<option <%= country == "WLF" ? "selected" : "" %> value="WLF">Wallis and Futuna</option>
+				<option <%= country == "ESH" ? "selected" : "" %> value="ESH">Western Sahara</option>
+				<option <%= country == "YEM" ? "selected" : "" %> value="YEM">Yemen</option>
+				<option <%= country == "ZMB" ? "selected" : "" %> value="ZMB">Zambia</option>
+				<option <%= country == "ZWE" ? "selected" : "" %> value="ZWE">Zimbabwe</option>
+			</select>
+		</div>
+		<br>
+		<div class="form-group">
+			<label for="email">Email:</label>
+			<input class="form-control" id="email" placeholder="Email" name="email" type="email" required value="<%= email %>">
+		</div>
+		<br>
+		<div class="form-group">
+			<label for="phone">Phone:</label>
+			<input class="form-control" id="phone" placeholder="(xxx) xxx-xxxx" name="phone" type="phone" required value="<%= phone %>">
+		</div>
+		<div class="form-group">
+			<input class="button" type="Submit" />
+		</div>
+	</form>
